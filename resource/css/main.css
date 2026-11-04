@@ -1,0 +1,144 @@
+      /* ---------- Base ---------- */
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      /* ---------- Cover overlay ---------- */
+      .cover-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(61, 67, 46, 0.45) 0%,
+          rgba(61, 67, 46, 0.72) 100%
+        );
+      }
+
+      /* ---------- Decorative divider ---------- */
+      .section-divider {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #8d9a60, transparent);
+      }
+
+      /* ---------- Flip card for gift ---------- */
+      .flip-card {
+        perspective: 800px;
+      }
+      .flip-card-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner,
+      .flip-card:focus-within .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        backface-visibility: hidden;
+      }
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+
+      /* ---------- Floating petals ---------- */
+      @keyframes float {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      .petal {
+        position: fixed;
+        top: -30px;
+        width: 12px;
+        height: 12px;
+        background: #c4cba5;
+        border-radius: 50% 0 50% 0;
+        opacity: 0.5;
+        animation: float linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* ---------- Scroll progress bar ---------- */
+      #progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #6f7a4a, #8d9a60, #a8b27e);
+        z-index: 100;
+        transition: width 0.15s;
+      }
+
+      /* ---------- Music toggle ---------- */
+      .music-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 90;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(61, 67, 46, 0.85);
+        backdrop-filter: blur(4px);
+        color: #f4ecda;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        border: none;
+        transition: transform 0.2s;
+      }
+      .music-btn:hover {
+        transform: scale(1.1);
+      }
+      .music-btn.playing svg {
+        animation: pulse-music 1s ease infinite;
+      }
+      @keyframes pulse-music {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      /* ---------- Countdown flip style ---------- */
+      .countdown-box {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* ---------- Custom scrollbar ---------- */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf6ee;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a8b27e;
+        border-radius: 2px;
+      }
+
+      /* ---------- Photo hover ---------- */
+      .gallery-item {
+        overflow: hidden;
+      }
+      .gallery-item img {
+        transition:
+          transform 0.5s ease,
+          filter 0.5s ease;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.08);
+        filter: brightness(1.05);
+      }

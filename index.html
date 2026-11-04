@@ -1,727 +1,1179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Pernikahan - Andi & Bunga</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan - Andi & Bunga</title>
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            olive:   { 50: '#f7f8f3', 100: '#eef0e4', 200: '#dde1ca', 300: '#c4cba5', 400: '#a8b27e', 500: '#8d9a60', 600: '#6f7a4a', 700: '#56603b', 800: '#474e33', 900: '#3d432e' },
-            sage:    { 50: '#f6f7f4', 100: '#e8ebe2', 200: '#d2d8c5', 300: '#b3bda0', 400: '#939f7b', 500: '#77855e', 600: '#5d6a49', 700: '#4a543b', 800: '#3d4533', 900: '#34392c' },
-            beige:   { 50: '#fdfcf9', 100: '#faf6ee', 200: '#f4ecda', 300: '#ebdcbe', 400: '#dfc79e', 500: '#d4b07e', 600: '#c09665', 700: '#a97b52', 800: '#8b6445', 900: '#72533b' },
-            cream:   { 50: '#fefdfb', 100: '#fdf9f1', 200: '#fbf3e3', 300: '#f7e8cc', 400: '#f0d6a8', 500: '#e8c284', 600: '#d9a45c', 700: '#c48840', 800: '#a06e35', 900: '#845b2e' },
-          },
-          fontFamily: {
-            serif:  ['"Playfair Display"', 'Georgia', 'serif'],
-            sans:   ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            script: ['"Great Vibes"', 'cursive'],
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              olive: {
+                50: "#f7f8f3",
+                100: "#eef0e4",
+                200: "#dde1ca",
+                300: "#c4cba5",
+                400: "#a8b27e",
+                500: "#8d9a60",
+                600: "#6f7a4a",
+                700: "#56603b",
+                800: "#474e33",
+                900: "#3d432e",
+              },
+              sage: {
+                50: "#f6f7f4",
+                100: "#e8ebe2",
+                200: "#d2d8c5",
+                300: "#b3bda0",
+                400: "#939f7b",
+                500: "#77855e",
+                600: "#5d6a49",
+                700: "#4a543b",
+                800: "#3d4533",
+                900: "#34392c",
+              },
+              beige: {
+                50: "#fdfcf9",
+                100: "#faf6ee",
+                200: "#f4ecda",
+                300: "#ebdcbe",
+                400: "#dfc79e",
+                500: "#d4b07e",
+                600: "#c09665",
+                700: "#a97b52",
+                800: "#8b6445",
+                900: "#72533b",
+              },
+              cream: {
+                50: "#fefdfb",
+                100: "#fdf9f1",
+                200: "#fbf3e3",
+                300: "#f7e8cc",
+                400: "#f0d6a8",
+                500: "#e8c284",
+                600: "#d9a45c",
+                700: "#c48840",
+                800: "#a06e35",
+                900: "#845b2e",
+              },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "Georgia", "serif"],
+              sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
+              script: ['"Great Vibes"', "cursive"],
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/resource/css/main.css" />
 
-  <!-- AOS - Animate on Scroll -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* ---------- Base ---------- */
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    <!-- AOS - Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  </head>
 
-    /* ---------- Cover overlay ---------- */
-    .cover-overlay {
-      background: linear-gradient(180deg, rgba(61,67,46,.45) 0%, rgba(61,67,46,.72) 100%);
-    }
+  <body class="bg-beige-100 text-sage-800 antialiased">
+    <!-- ==================== SCROLL PROGRESS BAR ==================== -->
+    <div id="progress-bar" style="width: 0"></div>
 
-    /* ---------- Decorative divider ---------- */
-    .section-divider {
-      width: 80px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #8d9a60, transparent);
-    }
+    <!-- ==================== FLOATING PETALS (decorative) ==================== -->
+    <div id="petals-container" aria-hidden="true"></div>
 
-    /* ---------- Flip card for gift ---------- */
-    .flip-card { perspective: 800px; }
-    .flip-card-inner {
-      transition: transform .6s;
-      transform-style: preserve-3d;
-    }
-    .flip-card:hover .flip-card-inner,
-    .flip-card:focus-within .flip-card-inner { transform: rotateY(180deg); }
-    .flip-card-front, .flip-card-back { backface-visibility: hidden; }
-    .flip-card-back { transform: rotateY(180deg); }
-
-    /* ---------- Floating petals ---------- */
-    @keyframes float {
-      0%   { transform: translateY(0)   rotate(0deg);   opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
-    .petal {
-      position: fixed;
-      top: -30px;
-      width: 12px;
-      height: 12px;
-      background: #c4cba5;
-      border-radius: 50% 0 50% 0;
-      opacity: 0.5;
-      animation: float linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ---------- Scroll progress bar ---------- */
-    #progress-bar {
-      position: fixed; top: 0; left: 0; height: 3px;
-      background: linear-gradient(90deg, #6f7a4a, #8d9a60, #a8b27e);
-      z-index: 100; transition: width .15s;
-    }
-
-    /* ---------- Music toggle ---------- */
-    .music-btn {
-      position: fixed; bottom: 24px; right: 24px;
-      z-index: 90;
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(61,67,46,.85);
-      backdrop-filter: blur(4px);
-      color: #f4ecda;
-      box-shadow: 0 4px 15px rgba(0,0,0,.2);
-      cursor: pointer; border: none;
-      transition: transform .2s;
-    }
-    .music-btn:hover { transform: scale(1.1); }
-    .music-btn.playing svg { animation: pulse-music 1s ease infinite; }
-    @keyframes pulse-music {
-      0%, 100% { opacity: 1; }
-      50%      { opacity: .5; }
-    }
-
-    /* ---------- Countdown flip style ---------- */
-    .countdown-box {
-      background: rgba(255,255,255,.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,.2);
-    }
-
-    /* ---------- Custom scrollbar ---------- */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #faf6ee; }
-    ::-webkit-scrollbar-thumb { background: #a8b27e; border-radius: 2px; }
-
-    /* ---------- Photo hover ---------- */
-    .gallery-item { overflow: hidden; }
-    .gallery-item img {
-      transition: transform .5s ease, filter .5s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.08);
-      filter: brightness(1.05);
-    }
-  </style>
-</head>
-
-<body class="bg-beige-100 text-sage-800 antialiased">
-
-<!-- ==================== SCROLL PROGRESS BAR ==================== -->
-<div id="progress-bar" style="width:0"></div>
-
-<!-- ==================== FLOATING PETALS (decorative) ==================== -->
-<div id="petals-container" aria-hidden="true"></div>
-
-<!-- =====================================================================
+    <!-- =====================================================================
      WRAPPER — max-width menyerupai layar HP di tengah monitor desktop
      ===================================================================== -->
-<div class="mx-auto max-w-[480px] min-h-screen shadow-2xl relative bg-beige-50 overflow-hidden">
-
-  <!-- ================================================================
+    <div
+      class="mx-auto max-w-[480px] min-h-screen shadow-2xl relative bg-beige-50 overflow-hidden"
+    >
+      <!-- ================================================================
        1. HERO / COVER DEPAN
        ================================================================ -->
-  <section id="cover" class="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
-    <!-- Background image placeholder -->
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
-    <div class="absolute inset-0 cover-overlay"></div>
+      <section
+        id="cover"
+        class="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+      >
+        <!-- Background image placeholder -->
+        <div
+          class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"
+        ></div>
+        <div class="absolute inset-0 cover-overlay"></div>
 
-    <!-- Content -->
-    <div class="relative z-10 px-6" data-aos="fade-up" data-aos-duration="1200">
-      <p class="text-beige-200 tracking-[.35em] uppercase text-xs font-light mb-4">The Wedding Of</p>
+        <!-- Content -->
+        <div
+          class="relative z-10 px-6"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
+          <p
+            class="text-beige-200 tracking-[.35em] uppercase text-xs font-light mb-4"
+          >
+            The Wedding Of
+          </p>
 
-      <!-- Initials -->
-      <div class="flex items-center justify-center gap-4 mb-2">
-        <span class="font-script text-7xl text-beige-100 drop-shadow-lg">A</span>
-        <span class="text-beige-300 text-3xl font-light">&amp;</span>
-        <span class="font-script text-7xl text-beige-100 drop-shadow-lg">B</span>
-      </div>
+          <!-- Initials -->
+          <div class="flex items-center justify-center gap-4 mb-2">
+            <span class="font-script text-7xl text-beige-100 drop-shadow-lg"
+              >A</span
+            >
+            <span class="text-beige-300 text-3xl font-light">&amp;</span>
+            <span class="font-script text-7xl text-beige-100 drop-shadow-lg"
+              >B</span
+            >
+          </div>
 
-      <h1 class="font-serif text-2xl md:text-3xl text-white font-semibold tracking-wide mt-1">
-        Andi &amp; Bunga
-      </h1>
+          <h1
+            class="font-serif text-2xl md:text-3xl text-white font-semibold tracking-wide mt-1"
+          >
+            Andi &amp; Bunga
+          </h1>
 
-      <div class="section-divider mx-auto my-5 !bg-gradient-to-r !from-transparent !via-beige-300 !to-transparent"></div>
+          <div
+            class="section-divider mx-auto my-5 !bg-gradient-to-r !from-transparent !via-beige-300 !to-transparent"
+          ></div>
 
-      <!-- Date -->
-      <p class="text-beige-200 font-light tracking-widest text-sm">Sabtu, 14 Februari 2026</p>
+          <!-- Date -->
+          <p class="text-beige-200 font-light tracking-widest text-sm">
+            Sabtu, 14 Februari 2026
+          </p>
 
-      <!-- Countdown -->
-      <div class="flex justify-center gap-3 mt-6" id="countdown">
-        <div class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]">
-          <span id="cd-days" class="block text-2xl font-bold text-white">--</span>
-          <span class="text-[10px] uppercase tracking-wider text-beige-200">Hari</span>
+          <!-- Countdown -->
+          <div class="flex justify-center gap-3 mt-6" id="countdown">
+            <div
+              class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]"
+            >
+              <span id="cd-days" class="block text-2xl font-bold text-white"
+                >--</span
+              >
+              <span class="text-[10px] uppercase tracking-wider text-beige-200"
+                >Hari</span
+              >
+            </div>
+            <div
+              class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]"
+            >
+              <span id="cd-hours" class="block text-2xl font-bold text-white"
+                >--</span
+              >
+              <span class="text-[10px] uppercase tracking-wider text-beige-200"
+                >Jam</span
+              >
+            </div>
+            <div
+              class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]"
+            >
+              <span id="cd-mins" class="block text-2xl font-bold text-white"
+                >--</span
+              >
+              <span class="text-[10px] uppercase tracking-wider text-beige-200"
+                >Menit</span
+              >
+            </div>
+            <div
+              class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]"
+            >
+              <span id="cd-secs" class="block text-2xl font-bold text-white"
+                >--</span
+              >
+              <span class="text-[10px] uppercase tracking-wider text-beige-200"
+                >Detik</span
+              >
+            </div>
+          </div>
+
+          <!-- Kepada / Tamu -->
+          <div class="mt-8 mb-4">
+            <p class="text-beige-300 text-xs tracking-wider">Kepada Yth.</p>
+            <p class="text-white font-serif text-lg mt-1" id="guest-name">
+              Tamu Undangan
+            </p>
+          </div>
+
+          <!-- Tombol Buka Undangan -->
+          <button
+            onclick="openInvitation()"
+            class="mt-2 inline-flex items-center gap-2 bg-olive-600/90 hover:bg-olive-700 text-beige-100 px-8 py-3 rounded-full text-sm font-medium tracking-wider uppercase shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border border-olive-400/30"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 19V5a2 2 0 012-2h6l2 2h6a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 13h6m-3-3v6"
+              />
+            </svg>
+            Buka Undangan
+          </button>
         </div>
-        <div class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]">
-          <span id="cd-hours" class="block text-2xl font-bold text-white">--</span>
-          <span class="text-[10px] uppercase tracking-wider text-beige-200">Jam</span>
+
+        <!-- Scroll indicator -->
+        <div
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-0 transition-opacity duration-500"
+          id="scroll-hint"
+        >
+          <svg
+            class="w-5 h-5 text-beige-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
         </div>
-        <div class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]">
-          <span id="cd-mins" class="block text-2xl font-bold text-white">--</span>
-          <span class="text-[10px] uppercase tracking-wider text-beige-200">Menit</span>
-        </div>
-        <div class="countdown-box rounded-xl px-3 py-2 text-center min-w-[56px]">
-          <span id="cd-secs" class="block text-2xl font-bold text-white">--</span>
-          <span class="text-[10px] uppercase tracking-wider text-beige-200">Detik</span>
-        </div>
-      </div>
+      </section>
 
-      <!-- Kepada / Tamu -->
-      <div class="mt-8 mb-4">
-        <p class="text-beige-300 text-xs tracking-wider">Kepada Yth.</p>
-        <p class="text-white font-serif text-lg mt-1" id="guest-name">Tamu Undangan</p>
-      </div>
-
-      <!-- Tombol Buka Undangan -->
-      <button onclick="openInvitation()"
-        class="mt-2 inline-flex items-center gap-2 bg-olive-600/90 hover:bg-olive-700 text-beige-100 px-8 py-3 rounded-full text-sm font-medium tracking-wider uppercase shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border border-olive-400/30">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 19V5a2 2 0 012-2h6l2 2h6a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6"/></svg>
-        Buka Undangan
-      </button>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce opacity-0 transition-opacity duration-500" id="scroll-hint">
-      <svg class="w-5 h-5 text-beige-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-    </div>
-  </section>
-
-  <!-- ================================================================
+      <!-- ================================================================
        INVITATION CONTENT — hidden until "Buka Undangan" is clicked
        ================================================================ -->
-  <div id="invitation-content" class="hidden">
-
-    <!-- ================================================================
+      <div id="invitation-content" class="hidden">
+        <!-- ================================================================
          Bismillah / Opening Quote
          ================================================================ -->
-    <section class="py-16 px-6 text-center bg-beige-50">
-      <div data-aos="fade-up">
-        <p class="font-serif text-olive-700 text-sm italic leading-relaxed">بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <p class="mt-4 text-sage-600 text-xs leading-relaxed max-w-xs mx-auto">
-          Assalamu'alaikum Warahmatullahi Wabarakatuh<br><br>
-          Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
-        </p>
-      </div>
-    </section>
+        <section class="py-16 px-6 text-center bg-beige-50">
+          <div data-aos="fade-up">
+            <p class="font-serif text-olive-700 text-sm italic leading-relaxed">
+              بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيْمِ
+            </p>
+            <p
+              class="mt-4 text-sage-600 text-xs leading-relaxed max-w-xs mx-auto"
+            >
+              Assalamu'alaikum Warahmatullahi Wabarakatuh<br /><br />
+              Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami
+              mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan
+              kami.
+            </p>
+          </div>
+        </section>
 
-    <!-- ================================================================
+        <!-- ================================================================
          2. PROFIL PASANGAN
          ================================================================ -->
-    <section id="couple" class="py-16 px-6 bg-gradient-to-b from-beige-50 to-sage-50">
-      <h2 class="font-script text-4xl text-olive-600 text-center mb-10" data-aos="fade-up">Mempelai</h2>
+        <section
+          id="couple"
+          class="py-16 px-6 bg-gradient-to-b from-beige-50 to-sage-50"
+        >
+          <h2
+            class="font-script text-4xl text-olive-600 text-center mb-10"
+            data-aos="fade-up"
+          >
+            Mempelai
+          </h2>
 
-      <!-- Mempelai Pria -->
-      <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-40 h-40 mx-auto rounded-full border-4 border-olive-200 shadow-lg overflow-hidden bg-sage-100 flex items-center justify-center">
-          <!-- Placeholder photo -->
-          <svg class="w-16 h-16 text-sage-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-        </div>
-        <h3 class="font-serif text-xl text-olive-700 mt-4 font-semibold">Andi Pratama, S.Kom.</h3>
-        <p class="text-sage-500 text-sm mt-1">Putra pertama dari</p>
-        <p class="text-sage-700 text-sm font-medium">Bapak H. Susanto &amp; Ibu Hj. Ratna</p>
-      </div>
+          <!-- Mempelai Pria -->
+          <div
+            class="text-center mb-12"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-40 h-40 mx-auto rounded-full border-4 border-olive-200 shadow-lg overflow-hidden bg-sage-100 flex items-center justify-center"
+            >
+              <!-- Placeholder photo -->
+              <svg
+                class="w-16 h-16 text-sage-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-olive-700 mt-4 font-semibold">
+              Andi Pratama, S.Kom.
+            </h3>
+            <p class="text-sage-500 text-sm mt-1">Putra pertama dari</p>
+            <p class="text-sage-700 text-sm font-medium">
+              Bapak H. Susanto &amp; Ibu Hj. Ratna
+            </p>
+          </div>
 
-      <!-- Divider ornament -->
-      <div class="flex items-center justify-center gap-3 mb-12" data-aos="zoom-in">
-        <div class="h-px w-12 bg-olive-300"></div>
-        <span class="font-script text-3xl text-olive-500">&amp;</span>
-        <div class="h-px w-12 bg-olive-300"></div>
-      </div>
+          <!-- Divider ornament -->
+          <div
+            class="flex items-center justify-center gap-3 mb-12"
+            data-aos="zoom-in"
+          >
+            <div class="h-px w-12 bg-olive-300"></div>
+            <span class="font-script text-3xl text-olive-500">&amp;</span>
+            <div class="h-px w-12 bg-olive-300"></div>
+          </div>
 
-      <!-- Mempelai Wanita -->
-      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-40 h-40 mx-auto rounded-full border-4 border-olive-200 shadow-lg overflow-hidden bg-sage-100 flex items-center justify-center">
-          <svg class="w-16 h-16 text-sage-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-        </div>
-        <h3 class="font-serif text-xl text-olive-700 mt-4 font-semibold">Bunga Lestari, S.Pd.</h3>
-        <p class="text-sage-500 text-sm mt-1">Putri kedua dari</p>
-        <p class="text-sage-700 text-sm font-medium">Bapak H. Ahmad &amp; Ibu Hj. Siti</p>
-      </div>
-    </section>
+          <!-- Mempelai Wanita -->
+          <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-40 h-40 mx-auto rounded-full border-4 border-olive-200 shadow-lg overflow-hidden bg-sage-100 flex items-center justify-center"
+            >
+              <svg
+                class="w-16 h-16 text-sage-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                />
+              </svg>
+            </div>
+            <h3 class="font-serif text-xl text-olive-700 mt-4 font-semibold">
+              Bunga Lestari, S.Pd.
+            </h3>
+            <p class="text-sage-500 text-sm mt-1">Putri kedua dari</p>
+            <p class="text-sage-700 text-sm font-medium">
+              Bapak H. Ahmad &amp; Ibu Hj. Siti
+            </p>
+          </div>
+        </section>
 
-    <!-- ================================================================
+        <!-- ================================================================
          3. DETAIL ACARA — AKAD & RESEPSI
          ================================================================ -->
-    <section id="event" class="py-16 px-6 bg-beige-50">
-      <h2 class="font-script text-4xl text-olive-600 text-center mb-3" data-aos="fade-up">Acara</h2>
-      <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">Dengan hormat kami mengundang kehadiran Anda</p>
+        <section id="event" class="py-16 px-6 bg-beige-50">
+          <h2
+            class="font-script text-4xl text-olive-600 text-center mb-3"
+            data-aos="fade-up"
+          >
+            Acara
+          </h2>
+          <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">
+            Dengan hormat kami mengundang kehadiran Anda
+          </p>
 
-      <!-- Card: Akad Nikah -->
-      <div class="bg-white rounded-2xl shadow-md border border-sage-100 p-6 mb-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-olive-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+          <!-- Card: Akad Nikah -->
+          <div
+            class="bg-white rounded-2xl shadow-md border border-sage-100 p-6 mb-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-olive-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg text-olive-700 font-semibold">
+                Akad Nikah
+              </h3>
+            </div>
+            <div class="space-y-2 text-sm text-sage-600">
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                  />
+                </svg>
+                <span>Sabtu, 14 Februari 2026</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>08:00 – 10:00 WIB</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span
+                  >Masjid Agung Al-Akbar<br /><span
+                    class="text-sage-400 text-xs"
+                    >Jl. Masjid Agung No. 1, Surabaya</span
+                  ></span
+                >
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener"
+              class="mt-5 inline-flex items-center gap-2 bg-olive-50 hover:bg-olive-100 text-olive-700 px-5 py-2.5 rounded-full text-xs font-medium tracking-wide transition-colors border border-olive-200"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                />
+              </svg>
+              Buka di Google Maps
+            </a>
           </div>
-          <h3 class="font-serif text-lg text-olive-700 font-semibold">Akad Nikah</h3>
-        </div>
-        <div class="space-y-2 text-sm text-sage-600">
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-            <span>Sabtu, 14 Februari 2026</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>08:00 – 10:00 WIB</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-            <span>Masjid Agung Al-Akbar<br><span class="text-sage-400 text-xs">Jl. Masjid Agung No. 1, Surabaya</span></span>
-          </div>
-        </div>
-        <a href="https://maps.google.com" target="_blank" rel="noopener"
-           class="mt-5 inline-flex items-center gap-2 bg-olive-50 hover:bg-olive-100 text-olive-700 px-5 py-2.5 rounded-full text-xs font-medium tracking-wide transition-colors border border-olive-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
-          Buka di Google Maps
-        </a>
-      </div>
 
-      <!-- Card: Resepsi -->
-      <div class="bg-white rounded-2xl shadow-md border border-sage-100 p-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-olive-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/></svg>
+          <!-- Card: Resepsi -->
+          <div
+            class="bg-white rounded-2xl shadow-md border border-sage-100 p-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  class="w-5 h-5 text-olive-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"
+                  />
+                </svg>
+              </div>
+              <h3 class="font-serif text-lg text-olive-700 font-semibold">
+                Resepsi
+              </h3>
+            </div>
+            <div class="space-y-2 text-sm text-sage-600">
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                  />
+                </svg>
+                <span>Sabtu, 14 Februari 2026</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span>11:00 – 14:00 WIB</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-4 h-4 text-olive-400 mt-0.5 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+                <span
+                  >Grand Ballroom Hotel Majapahit<br /><span
+                    class="text-sage-400 text-xs"
+                    >Jl. Tunjungan No. 65, Surabaya</span
+                  ></span
+                >
+              </div>
+            </div>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener"
+              class="mt-5 inline-flex items-center gap-2 bg-olive-50 hover:bg-olive-100 text-olive-700 px-5 py-2.5 rounded-full text-xs font-medium tracking-wide transition-colors border border-olive-200"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                />
+              </svg>
+              Buka di Google Maps
+            </a>
           </div>
-          <h3 class="font-serif text-lg text-olive-700 font-semibold">Resepsi</h3>
-        </div>
-        <div class="space-y-2 text-sm text-sage-600">
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-            <span>Sabtu, 14 Februari 2026</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>11:00 – 14:00 WIB</span>
-          </div>
-          <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-olive-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-            <span>Grand Ballroom Hotel Majapahit<br><span class="text-sage-400 text-xs">Jl. Tunjungan No. 65, Surabaya</span></span>
-          </div>
-        </div>
-        <a href="https://maps.google.com" target="_blank" rel="noopener"
-           class="mt-5 inline-flex items-center gap-2 bg-olive-50 hover:bg-olive-100 text-olive-700 px-5 py-2.5 rounded-full text-xs font-medium tracking-wide transition-colors border border-olive-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"/></svg>
-          Buka di Google Maps
-        </a>
-      </div>
-    </section>
+        </section>
 
-    <!-- ================================================================
+        <!-- ================================================================
          4. GALERI PRE-WEDDING
          ================================================================ -->
-    <section id="gallery" class="py-16 px-6 bg-gradient-to-b from-beige-50 to-sage-50">
-      <h2 class="font-script text-4xl text-olive-600 text-center mb-3" data-aos="fade-up">Galeri</h2>
-      <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">Momen bahagia kami</p>
+        <section
+          id="gallery"
+          class="py-16 px-6 bg-gradient-to-b from-beige-50 to-sage-50"
+        >
+          <h2
+            class="font-script text-4xl text-olive-600 text-center mb-3"
+            data-aos="fade-up"
+          >
+            Galeri
+          </h2>
+          <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">
+            Momen bahagia kami
+          </p>
 
-      <div class="grid grid-cols-2 gap-3">
-        <!-- Photo 1 — span 2 cols -->
-        <div class="col-span-2 rounded-2xl gallery-item h-48 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up">
-          <svg class="w-10 h-10 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21zm14.25-15.75h.008v.008h-.008V5.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
-        </div>
-        <!-- Photo 2 -->
-        <div class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up" data-aos-delay="100">
-          <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
-        </div>
-        <!-- Photo 3 -->
-        <div class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up" data-aos-delay="150">
-          <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
-        </div>
-        <!-- Photo 4 -->
-        <div class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up" data-aos-delay="200">
-          <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
-        </div>
-        <!-- Photo 5 -->
-        <div class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up" data-aos-delay="250">
-          <svg class="w-8 h-8 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
-        </div>
-        <!-- Photo 6 — span 2 cols -->
-        <div class="col-span-2 rounded-2xl gallery-item h-48 bg-sage-200 flex items-center justify-center shadow-sm" data-aos="fade-up" data-aos-delay="300">
-          <svg class="w-10 h-10 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"/></svg>
-        </div>
-      </div>
-    </section>
+          <div class="grid grid-cols-2 gap-3">
+            <!-- Photo 1 — span 2 cols -->
+            <div
+              class="col-span-2 rounded-2xl gallery-item h-48 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+            >
+              <svg
+                class="w-10 h-10 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21zm14.25-15.75h.008v.008h-.008V5.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                />
+              </svg>
+            </div>
+            <!-- Photo 2 -->
+            <div
+              class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <svg
+                class="w-8 h-8 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+            </div>
+            <!-- Photo 3 -->
+            <div
+              class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <svg
+                class="w-8 h-8 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+            </div>
+            <!-- Photo 4 -->
+            <div
+              class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <svg
+                class="w-8 h-8 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+            </div>
+            <!-- Photo 5 -->
+            <div
+              class="rounded-2xl gallery-item h-40 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <svg
+                class="w-8 h-8 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+            </div>
+            <!-- Photo 6 — span 2 cols -->
+            <div
+              class="col-span-2 rounded-2xl gallery-item h-48 bg-sage-200 flex items-center justify-center shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <svg
+                class="w-10 h-10 text-sage-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
 
-    <!-- ================================================================
+        <!-- ================================================================
          5. RSVP & BUKU TAMU
          ================================================================ -->
-    <section id="rsvp" class="py-16 px-6 bg-beige-50">
-      <h2 class="font-script text-4xl text-olive-600 text-center mb-3" data-aos="fade-up">RSVP</h2>
-      <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">Konfirmasi kehadiran &amp; kirim ucapan</p>
+        <section id="rsvp" class="py-16 px-6 bg-beige-50">
+          <h2
+            class="font-script text-4xl text-olive-600 text-center mb-3"
+            data-aos="fade-up"
+          >
+            RSVP
+          </h2>
+          <p class="text-center text-sage-500 text-xs mb-10" data-aos="fade-up">
+            Konfirmasi kehadiran &amp; kirim ucapan
+          </p>
 
-      <form id="rsvp-form" class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-        <!-- Nama -->
-        <div>
-          <label for="rsvp-name" class="block text-xs font-medium text-sage-600 mb-1.5">Nama Lengkap</label>
-          <input id="rsvp-name" name="name" type="text" required placeholder="Masukkan nama Anda"
-            class="w-full px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-800 placeholder:text-sage-300 focus:outline-none focus:ring-2 focus:ring-olive-400/50 focus:border-olive-400 transition" />
-        </div>
-
-        <!-- Kehadiran -->
-        <div>
-          <label class="block text-xs font-medium text-sage-600 mb-1.5">Konfirmasi Kehadiran</label>
-          <div class="grid grid-cols-2 gap-3">
-            <label class="relative cursor-pointer">
-              <input type="radio" name="attendance" value="hadir" class="peer sr-only" required />
-              <div class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-600 peer-checked:border-olive-500 peer-checked:bg-olive-50 peer-checked:text-olive-700 transition">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Hadir
-              </div>
-            </label>
-            <label class="relative cursor-pointer">
-              <input type="radio" name="attendance" value="tidak" class="peer sr-only" />
-              <div class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-600 peer-checked:border-red-400 peer-checked:bg-red-50 peer-checked:text-red-600 transition">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Tidak Hadir
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Ucapan -->
-        <div>
-          <label for="rsvp-message" class="block text-xs font-medium text-sage-600 mb-1.5">Ucapan &amp; Doa</label>
-          <textarea id="rsvp-message" name="message" rows="4" placeholder="Tulis ucapan untuk kedua mempelai..."
-            class="w-full px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-800 placeholder:text-sage-300 resize-none focus:outline-none focus:ring-2 focus:ring-olive-400/50 focus:border-olive-400 transition"></textarea>
-        </div>
-
-        <!-- Submit button -->
-        <button type="submit"
-          class="w-full flex items-center justify-center gap-2 bg-olive-600 hover:bg-olive-700 active:scale-[.98] text-beige-100 py-3.5 rounded-xl text-sm font-semibold tracking-wide shadow-md hover:shadow-lg transition-all duration-300">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-          Kirim Ucapan
-        </button>
-      </form>
-
-      <!-- Success message (hidden by default) -->
-      <div id="rsvp-success" class="hidden mt-6 p-5 rounded-xl bg-olive-50 border border-olive-200 text-center">
-        <svg class="w-10 h-10 mx-auto text-olive-500 mb-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
-        <p class="text-olive-700 font-medium text-sm">Terima kasih atas ucapannya! 🤍</p>
-      </div>
-
-      <!-- Guestbook / Ucapan list -->
-      <div class="mt-10" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="font-serif text-lg text-olive-700 mb-4 text-center">Ucapan dari Tamu</h3>
-        <div id="guestbook" class="space-y-3 max-h-72 overflow-y-auto pr-1">
-          <!-- Sample wish 1 -->
-          <div class="p-4 rounded-xl bg-white border border-sage-100 shadow-sm">
-            <div class="flex items-center gap-2 mb-1.5">
-              <div class="w-7 h-7 rounded-full bg-olive-100 flex items-center justify-center text-xs font-bold text-olive-600">R</div>
-              <span class="text-sm font-medium text-sage-700">Rina Permata</span>
-              <span class="text-[10px] text-sage-400 ml-auto">✅ Hadir</span>
+          <form
+            id="rsvp-form"
+            class="space-y-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <!-- Nama -->
+            <div>
+              <label
+                for="rsvp-name"
+                class="block text-xs font-medium text-sage-600 mb-1.5"
+                >Nama Lengkap</label
+              >
+              <input
+                id="rsvp-name"
+                name="name"
+                type="text"
+                required
+                placeholder="Masukkan nama Anda"
+                class="w-full px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-800 placeholder:text-sage-300 focus:outline-none focus:ring-2 focus:ring-olive-400/50 focus:border-olive-400 transition"
+              />
             </div>
-            <p class="text-xs text-sage-500 leading-relaxed">Selamat menempuh hidup baru! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin 🤲</p>
-          </div>
-          <!-- Sample wish 2 -->
-          <div class="p-4 rounded-xl bg-white border border-sage-100 shadow-sm">
-            <div class="flex items-center gap-2 mb-1.5">
-              <div class="w-7 h-7 rounded-full bg-olive-100 flex items-center justify-center text-xs font-bold text-olive-600">D</div>
-              <span class="text-sm font-medium text-sage-700">Dani Akbar</span>
-              <span class="text-[10px] text-sage-400 ml-auto">✅ Hadir</span>
-            </div>
-            <p class="text-xs text-sage-500 leading-relaxed">Barakallahu lakuma wa baraka 'alaikuma! Happy wedding bro! 🎉</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ================================================================
+            <!-- Kehadiran -->
+            <div>
+              <label class="block text-xs font-medium text-sage-600 mb-1.5"
+                >Konfirmasi Kehadiran</label
+              >
+              <div class="grid grid-cols-2 gap-3">
+                <label class="relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="hadir"
+                    class="peer sr-only"
+                    required
+                  />
+                  <div
+                    class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-600 peer-checked:border-olive-500 peer-checked:bg-olive-50 peer-checked:text-olive-700 transition"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Hadir
+                  </div>
+                </label>
+                <label class="relative cursor-pointer">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="tidak"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-600 peer-checked:border-red-400 peer-checked:bg-red-50 peer-checked:text-red-600 transition"
+                  >
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Tidak Hadir
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Ucapan -->
+            <div>
+              <label
+                for="rsvp-message"
+                class="block text-xs font-medium text-sage-600 mb-1.5"
+                >Ucapan &amp; Doa</label
+              >
+              <textarea
+                id="rsvp-message"
+                name="message"
+                rows="4"
+                placeholder="Tulis ucapan untuk kedua mempelai..."
+                class="w-full px-4 py-3 rounded-xl border border-sage-200 bg-white text-sm text-sage-800 placeholder:text-sage-300 resize-none focus:outline-none focus:ring-2 focus:ring-olive-400/50 focus:border-olive-400 transition"
+              ></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button
+              type="submit"
+              class="w-full flex items-center justify-center gap-2 bg-olive-600 hover:bg-olive-700 active:scale-[.98] text-beige-100 py-3.5 rounded-xl text-sm font-semibold tracking-wide shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                />
+              </svg>
+              Kirim Ucapan
+            </button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div
+            id="rsvp-success"
+            class="hidden mt-6 p-5 rounded-xl bg-olive-50 border border-olive-200 text-center"
+          >
+            <svg
+              class="w-10 h-10 mx-auto text-olive-500 mb-2"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+              />
+            </svg>
+            <p class="text-olive-700 font-medium text-sm">
+              Terima kasih atas ucapannya! 🤍
+            </p>
+          </div>
+
+          <!-- Guestbook / Ucapan list -->
+          <div class="mt-10" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="font-serif text-lg text-olive-700 mb-4 text-center">
+              Ucapan dari Tamu
+            </h3>
+            <div id="guestbook" class="space-y-3 max-h-72 overflow-y-auto pr-1">
+              <!-- Sample wish 1 -->
+              <div
+                class="p-4 rounded-xl bg-white border border-sage-100 shadow-sm"
+              >
+                <div class="flex items-center gap-2 mb-1.5">
+                  <div
+                    class="w-7 h-7 rounded-full bg-olive-100 flex items-center justify-center text-xs font-bold text-olive-600"
+                  >
+                    R
+                  </div>
+                  <span class="text-sm font-medium text-sage-700"
+                    >Rina Permata</span
+                  >
+                  <span class="text-[10px] text-sage-400 ml-auto"
+                    >✅ Hadir</span
+                  >
+                </div>
+                <p class="text-xs text-sage-500 leading-relaxed">
+                  Selamat menempuh hidup baru! Semoga menjadi keluarga yang
+                  sakinah, mawaddah, warahmah. Aamiin 🤲
+                </p>
+              </div>
+              <!-- Sample wish 2 -->
+              <div
+                class="p-4 rounded-xl bg-white border border-sage-100 shadow-sm"
+              >
+                <div class="flex items-center gap-2 mb-1.5">
+                  <div
+                    class="w-7 h-7 rounded-full bg-olive-100 flex items-center justify-center text-xs font-bold text-olive-600"
+                  >
+                    D
+                  </div>
+                  <span class="text-sm font-medium text-sage-700"
+                    >Dani Akbar</span
+                  >
+                  <span class="text-[10px] text-sage-400 ml-auto"
+                    >✅ Hadir</span
+                  >
+                </div>
+                <p class="text-xs text-sage-500 leading-relaxed">
+                  Barakallahu lakuma wa baraka 'alaikuma! Happy wedding bro! 🎉
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
          6. DIGITAL GIFT / ANGPAO
          ================================================================ -->
-    <section id="gift" class="py-16 px-6 bg-gradient-to-b from-sage-50 to-beige-50">
-      <h2 class="font-script text-4xl text-olive-600 text-center mb-3" data-aos="fade-up">Amplop Digital</h2>
-      <p class="text-center text-sage-500 text-xs mb-10 max-w-xs mx-auto" data-aos="fade-up">
-        Doa restu Anda sudah lebih dari cukup. Namun jika memberi merupakan ungkapan tanda kasih, Anda dapat melalui:
-      </p>
+        <section
+          id="gift"
+          class="py-16 px-6 bg-gradient-to-b from-sage-50 to-beige-50"
+        >
+          <h2
+            class="font-script text-4xl text-olive-600 text-center mb-3"
+            data-aos="fade-up"
+          >
+            Amplop Digital
+          </h2>
+          <p
+            class="text-center text-sage-500 text-xs mb-10 max-w-xs mx-auto"
+            data-aos="fade-up"
+          >
+            Doa restu Anda sudah lebih dari cukup. Namun jika memberi merupakan
+            ungkapan tanda kasih, Anda dapat melalui:
+          </p>
 
-      <div class="space-y-4">
-        <!-- Bank BCA -->
-        <div class="bg-white rounded-2xl shadow-md border border-sage-100 p-5" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
-              <span class="text-blue-600 text-xs font-bold">BCA</span>
+          <div class="space-y-4">
+            <!-- Bank BCA -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-sage-100 p-5"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0"
+                >
+                  <span class="text-blue-600 text-xs font-bold">BCA</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-sage-700">
+                    Bank Central Asia
+                  </p>
+                  <p class="text-xs text-sage-400">a.n. Andi Pratama</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-sage-50 rounded-xl px-4 py-3"
+              >
+                <span
+                  id="rek-bca"
+                  class="text-sm font-mono font-medium text-sage-700 flex-1 tracking-wider"
+                  >1234 5678 9012</span
+                >
+                <button
+                  onclick="copyToClipboard('rek-bca', this)"
+                  class="text-olive-600 hover:text-olive-700 transition"
+                  title="Salin nomor rekening"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div>
-              <p class="text-sm font-semibold text-sage-700">Bank Central Asia</p>
-              <p class="text-xs text-sage-400">a.n. Andi Pratama</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 bg-sage-50 rounded-xl px-4 py-3">
-            <span id="rek-bca" class="text-sm font-mono font-medium text-sage-700 flex-1 tracking-wider">1234 5678 9012</span>
-            <button onclick="copyToClipboard('rek-bca', this)" class="text-olive-600 hover:text-olive-700 transition" title="Salin nomor rekening">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
-            </button>
-          </div>
-        </div>
 
-        <!-- Bank Mandiri -->
-        <div class="bg-white rounded-2xl shadow-md border border-sage-100 p-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center shrink-0">
-              <span class="text-yellow-700 text-[10px] font-bold leading-tight text-center">MDR</span>
+            <!-- Bank Mandiri -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-sage-100 p-5"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-yellow-50 flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="text-yellow-700 text-[10px] font-bold leading-tight text-center"
+                    >MDR</span
+                  >
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-sage-700">
+                    Bank Mandiri
+                  </p>
+                  <p class="text-xs text-sage-400">a.n. Bunga Lestari</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-sage-50 rounded-xl px-4 py-3"
+              >
+                <span
+                  id="rek-mandiri"
+                  class="text-sm font-mono font-medium text-sage-700 flex-1 tracking-wider"
+                  >9876 5432 1098</span
+                >
+                <button
+                  onclick="copyToClipboard('rek-mandiri', this)"
+                  class="text-olive-600 hover:text-olive-700 transition"
+                  title="Salin nomor rekening"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div>
-              <p class="text-sm font-semibold text-sage-700">Bank Mandiri</p>
-              <p class="text-xs text-sage-400">a.n. Bunga Lestari</p>
+
+            <!-- QRIS -->
+            <div
+              class="bg-white rounded-2xl shadow-md border border-sage-100 p-5 text-center"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <p class="text-sm font-semibold text-sage-700 mb-3">
+                QRIS (Semua E-Wallet)
+              </p>
+              <!-- QRIS Placeholder -->
+              <div
+                class="w-48 h-48 mx-auto rounded-xl bg-sage-100 border-2 border-dashed border-sage-300 flex flex-col items-center justify-center gap-2"
+              >
+                <svg
+                  class="w-12 h-12 text-sage-400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 6.75h.75v.75h-.75v-.75zM6.75 16.5h.75v.75h-.75v-.75zM16.5 6.75h.75v.75h-.75v-.75zM13.5 13.5h.75v.75h-.75v-.75zM13.5 19.5h.75v.75h-.75v-.75zM19.5 13.5h.75v.75h-.75v-.75zM19.5 19.5h.75v.75h-.75v-.75zM16.5 16.5h.75v.75h-.75v-.75z"
+                  />
+                </svg>
+                <span class="text-xs text-sage-400">Scan QRIS di sini</span>
+              </div>
+              <p class="text-[10px] text-sage-400 mt-3">
+                GoPay • OVO • DANA • ShopeePay • LinkAja
+              </p>
             </div>
           </div>
-          <div class="flex items-center gap-2 bg-sage-50 rounded-xl px-4 py-3">
-            <span id="rek-mandiri" class="text-sm font-mono font-medium text-sage-700 flex-1 tracking-wider">9876 5432 1098</span>
-            <button onclick="copyToClipboard('rek-mandiri', this)" class="text-olive-600 hover:text-olive-700 transition" title="Salin nomor rekening">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"/></svg>
-            </button>
-          </div>
-        </div>
+        </section>
 
-        <!-- QRIS -->
-        <div class="bg-white rounded-2xl shadow-md border border-sage-100 p-5 text-center" data-aos="fade-up" data-aos-delay="300">
-          <p class="text-sm font-semibold text-sage-700 mb-3">QRIS (Semua E-Wallet)</p>
-          <!-- QRIS Placeholder -->
-          <div class="w-48 h-48 mx-auto rounded-xl bg-sage-100 border-2 border-dashed border-sage-300 flex flex-col items-center justify-center gap-2">
-            <svg class="w-12 h-12 text-sage-400" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 013.75 9.375v-4.5zM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125v-4.5zM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0113.5 9.375v-4.5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75zM6.75 16.5h.75v.75h-.75v-.75zM16.5 6.75h.75v.75h-.75v-.75zM13.5 13.5h.75v.75h-.75v-.75zM13.5 19.5h.75v.75h-.75v-.75zM19.5 13.5h.75v.75h-.75v-.75zM19.5 19.5h.75v.75h-.75v-.75zM16.5 16.5h.75v.75h-.75v-.75z"/></svg>
-            <span class="text-xs text-sage-400">Scan QRIS di sini</span>
-          </div>
-          <p class="text-[10px] text-sage-400 mt-3">GoPay • OVO • DANA • ShopeePay • LinkAja</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================================
+        <!-- ================================================================
          7. FOOTER
          ================================================================ -->
-    <footer id="footer" class="py-16 px-6 bg-sage-900 text-center">
-      <div data-aos="fade-up">
-        <div class="section-divider mx-auto mb-6 !bg-gradient-to-r !from-transparent !via-sage-500 !to-transparent"></div>
-        <p class="font-script text-3xl text-beige-200 mb-2">Terima Kasih</p>
-        <p class="text-sage-400 text-xs leading-relaxed max-w-xs mx-auto mb-6">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.
-        </p>
+        <footer id="footer" class="py-16 px-6 bg-sage-900 text-center">
+          <div data-aos="fade-up">
+            <div
+              class="section-divider mx-auto mb-6 !bg-gradient-to-r !from-transparent !via-sage-500 !to-transparent"
+            ></div>
+            <p class="font-script text-3xl text-beige-200 mb-2">Terima Kasih</p>
+            <p
+              class="text-sage-400 text-xs leading-relaxed max-w-xs mx-auto mb-6"
+            >
+              Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+              Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu
+              kepada kami.
+            </p>
 
-        <div class="flex items-center justify-center gap-3 mb-8">
-          <div class="h-px w-12 bg-sage-600"></div>
-          <span class="font-script text-2xl text-beige-300">A &amp; B</span>
-          <div class="h-px w-12 bg-sage-600"></div>
-        </div>
+            <div class="flex items-center justify-center gap-3 mb-8">
+              <div class="h-px w-12 bg-sage-600"></div>
+              <span class="font-script text-2xl text-beige-300">A &amp; B</span>
+              <div class="h-px w-12 bg-sage-600"></div>
+            </div>
 
-        <p class="text-sage-500 text-[10px] tracking-wider uppercase">
-          Wassalamu'alaikum Warahmatullahi Wabarakatuh
-        </p>
+            <p class="text-sage-500 text-[10px] tracking-wider uppercase">
+              Wassalamu'alaikum Warahmatullahi Wabarakatuh
+            </p>
 
-        <div class="mt-10 pt-6 border-t border-sage-700">
-          <p class="text-sage-600 text-[10px]">
-            Made with 🤍 &bull; Undangan Digital &copy; 2026
-          </p>
-        </div>
+            <div class="mt-10 pt-6 border-t border-sage-700">
+              <p class="text-sage-600 text-[10px]">
+                Made with 🤍 &bull; Undangan Digital &copy; 2026
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
-    </footer>
+      <!-- /invitation-content -->
+    </div>
+    <!-- /max-w wrapper -->
 
-  </div><!-- /invitation-content -->
+    <!-- ==================== MUSIC TOGGLE BUTTON ==================== -->
+    <button
+      class="music-btn"
+      id="music-toggle"
+      onclick="toggleMusic()"
+      title="Play / Pause Musik"
+    >
+      <svg
+        id="music-icon-play"
+        class="w-5 h-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+        />
+      </svg>
+    </button>
 
-</div><!-- /max-w wrapper -->
+    <!-- Background music (placeholder – ganti src dengan file musik Anda) -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="/resource/music/bgm.mp3" type="audio/mpeg">
+    </audio>
 
-
-<!-- ==================== MUSIC TOGGLE BUTTON ==================== -->
-<button class="music-btn" id="music-toggle" onclick="toggleMusic()" title="Play / Pause Musik">
-  <svg id="music-icon-play" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"/>
-  </svg>
-</button>
-
-<!-- Background music (placeholder – ganti src dengan file musik Anda) -->
-<audio id="bg-music" loop preload="auto">
-  <!-- <source src="path/to/your-music.mp3" type="audio/mpeg"> -->
-</audio>
-
-
-<!-- ==================== SCRIPTS ==================== -->
-<!-- AOS Init -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-  // ---------- AOS ----------
-  AOS.init({ duration: 800, once: true, offset: 50 });
-
-  // ---------- Scroll progress bar ----------
-  window.addEventListener('scroll', () => {
-    const scrollTop  = document.documentElement.scrollTop;
-    const scrollH    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const progress   = (scrollTop / scrollH) * 100;
-    document.getElementById('progress-bar').style.width = progress + '%';
-  });
-
-  // ---------- Floating petals ----------
-  (function createPetals() {
-    const container = document.getElementById('petals-container');
-    const colors = ['#c4cba5', '#dde1ca', '#d4b07e', '#b3bda0'];
-    for (let i = 0; i < 12; i++) {
-      const petal = document.createElement('div');
-      petal.classList.add('petal');
-      petal.style.left            = Math.random() * 100 + '%';
-      petal.style.animationDelay  = Math.random() * 10 + 's';
-      petal.style.animationDuration = 8 + Math.random() * 12 + 's';
-      petal.style.opacity         = 0.15 + Math.random() * 0.25;
-      petal.style.width           = 8 + Math.random() * 8 + 'px';
-      petal.style.height          = petal.style.width;
-      petal.style.background      = colors[Math.floor(Math.random() * colors.length)];
-      container.appendChild(petal);
-    }
-  })();
-
-  // ---------- Countdown ----------
-  (function countdown() {
-    const weddingDate = new Date('2026-02-14T08:00:00+07:00').getTime();
-    function update() {
-      const now  = Date.now();
-      const diff = weddingDate - now;
-      if (diff <= 0) {
-        document.getElementById('cd-days').textContent  = '0';
-        document.getElementById('cd-hours').textContent = '0';
-        document.getElementById('cd-mins').textContent  = '0';
-        document.getElementById('cd-secs').textContent  = '0';
-        return;
-      }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor((diff % 86400000) / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('cd-days').textContent  = d;
-      document.getElementById('cd-hours').textContent = h;
-      document.getElementById('cd-mins').textContent  = m;
-      document.getElementById('cd-secs').textContent  = s;
-    }
-    update();
-    setInterval(update, 1000);
-  })();
-
-  // ---------- Open Invitation ----------
-  function openInvitation() {
-    const content = document.getElementById('invitation-content');
-    const cover   = document.getElementById('cover');
-    content.classList.remove('hidden');
-    // Smooth scroll down
-    setTimeout(() => {
-      cover.nextElementSibling.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
-    // Show scroll hint
-    document.getElementById('scroll-hint').style.opacity = '1';
-    // Auto-play music if available
-    toggleMusic();
-  }
-
-  // ---------- Music toggle ----------
-  let isPlaying = false;
-  function toggleMusic() {
-    const audio = document.getElementById('bg-music');
-    const btn   = document.getElementById('music-toggle');
-    if (isPlaying) {
-      audio.pause();
-      btn.classList.remove('playing');
-    } else {
-      audio.play().catch(() => {});
-      btn.classList.add('/');
-    }
-    isPlaying = !isPlaying;
-  }
-
-  // ---------- Copy to clipboard ----------
-  function copyToClipboard(elementId, btn) {
-    const text = document.getElementById(elementId).textContent.replace(/\s/g, '');
-    navigator.clipboard.writeText(text).then(() => {
-      const original = btn.innerHTML;
-      btn.innerHTML = '<svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>';
-      setTimeout(() => { btn.innerHTML = original; }, 2000);
-    });
-  }
-
-  // ---------- RSVP Form Submit (front-end only) ----------
-  document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = {
-      name:       formData.get('name'),
-      attendance: formData.get('attendance'),
-      message:    formData.get('message'),
-    };
-
-    // === INTEGRASI WORDPRESS / API ===
-    // Ganti console.log berikut dengan fetch() ke endpoint WordPress REST API atau WA API
-    console.log('RSVP Data:', data);
-
-    // Contoh kirim ke WordPress REST API:
-    // fetch('/wp-json/undangan/v1/rsvp', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data),
-    // }).then(res => res.json()).then(result => { ... });
-
-    // Contoh kirim ke WhatsApp API (Fonnte / Wablas):
-    // fetch('https://api.fonnte.com/send', {
-    //   method: 'POST',
-    //   headers: { 'Authorization': 'TOKEN_ANDA' },
-    //   body: JSON.stringify({
-    //     target: '628xxxxxxxxxx',
-    //     message: `RSVP Baru!\nNama: ${data.name}\nKehadiran: ${data.attendance}\nUcapan: ${data.message}`
-    //   }),
-    // });
-
-    // Tambahkan ucapan ke guestbook (front-end demo)
-    const guestbook = document.getElementById('guestbook');
-    const initial   = data.name.charAt(0).toUpperCase();
-    const badge     = data.attendance === 'hadir' ? '✅ Hadir' : '❌ Tidak Hadir';
-    const wishHTML  = `
-      <div class="p-4 rounded-xl bg-white border border-sage-100 shadow-sm">
-        <div class="flex items-center gap-2 mb-1.5">
-          <div class="w-7 h-7 rounded-full bg-olive-100 flex items-center justify-center text-xs font-bold text-olive-600">${initial}</div>
-          <span class="text-sm font-medium text-sage-700">${data.name}</span>
-          <span class="text-[10px] text-sage-400 ml-auto">${badge}</span>
-        </div>
-        <p class="text-xs text-sage-500 leading-relaxed">${data.message || '-'}</p>
-      </div>`;
-    guestbook.insertAdjacentHTML('afterbegin', wishHTML);
-
-    // Show success & reset
-    document.getElementById('rsvp-success').classList.remove('hidden');
-    this.reset();
-    setTimeout(() => {
-      document.getElementById('rsvp-success').classList.add('hidden');
-    }, 4000);
-  });
-
-  // ---------- Guest name from URL param ----------
-  (function setGuestName() {
-    const params = new URLSearchParams(window.location.search);
-    const guest  = params.get('to') || params.get('tamu');
-    if (guest) {
-      document.getElementById('guest-name').textContent = decodeURIComponent(guest);
-    }
-  })();
-</script>
-
-</body>
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- AOS Init -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="/resource/js/main.js"></script>
+  </body>
 </html>
-
