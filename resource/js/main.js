@@ -54,7 +54,7 @@ window.addEventListener("scroll", () => {
   const daysEl = document.getElementById("cd-days");
   if (!daysEl) return;
 
-  const weddingDate = new Date("2026-02-14T08:00:00+07:00").getTime();
+  const weddingDate = new Date("2026-12-14T08:00:00+07:00").getTime();
 
   function update() {
     const now = Date.now();
